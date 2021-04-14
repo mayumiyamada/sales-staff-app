@@ -1,0 +1,36 @@
+   <div class="card col-sm-5 mx-auto mt-5 ">
+   <div class="card-body">
+   <h2 class="card-title">サインイン</h2>
+
+    <p class="card-text">
+    <%= form_with model: @user, url: user_session_path, local: true do |f|%>
+    <div class="form-group">
+      <%= f.label :employee_id_number, "社員番号", :class => "form-label" %>
+      <span class="indispensable">必須</span>
+      <%= f.text_field :employee_id_number, autofocus: true, :class => "form-control" %>
+    </div>
+    
+     <div class="form-group">
+      <%= f.label :password, "パスワード", :class => "form-label" %>
+      <span class="indispensable">必須</span>
+      <%= link_to "パスワードを忘れた場合", new_user_password_path, :class => "float-right" %>
+      <%= f.password_field :password, :class => "form-control" %>
+   
+    <% if devise_mapping.rememberable? %>
+    <div class="form-check">
+      <%= f.check_box :remember_me, :class => "form-check-input" %>
+      <%= f.label :remember_me, "ログインを記憶", :class => "form-check-label" %>
+    </div>
+    <% end %>
+    </div>
+ 
+    <div class="actions">
+      <%= f.submit "ログイン", :class => "btn btn-primary btn-block" %>
+    </div>
+    <% end %>
+ 
+    <div class="small text-muted mt-6">登録していますか?</div>
+    <%= link_to "アカウントを作成", new_user_registration_path, :class => "btn btn-light btn-block border mt-1" %>
+  </div>
+ </div>
+</div>
