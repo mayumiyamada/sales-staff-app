@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '51be90b794117fcab50f66ad18abe13c943cd0a60d35951378b01f909bc78ac4dbe0fb594fe1b566a528ce352e75c3ae81811f33936185b90d7e044fbf12e64c'
+  # config.secret_key = '75aed8cdd99c643da4fe130b261b19fc8d257069fc4efd534de7813e5048485ce43a991d291116557a7fc15e1b043773b329ea8bb10a14c2c3e1b2e875190794'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -46,8 +46,7 @@ Devise.setup do |config|
   # session. If you need permissions, you should implement that in a before filter.
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
-  
-  config.authentication_keys = [:employee_id_number]
+  # config.authentication_keys = [:email]
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
@@ -127,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '2b889aaaefb8c7c858eb02507ada6479ec2c8646c18cf267bcabdfbb57cf48961f45665565f6eba4009d94a50002280e0b37306e6b3e581dc0da733e40192b72'
+  # config.pepper = 'cad5d34d3e9e936afe7271e49c803350d7d7f039e966cfd0d58d111daca82aca49067d6ccdea61a58c05605159cbf42f0cd76ddf6dad82c5572a774da7aa7988'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -267,7 +266,7 @@ Devise.setup do |config|
   # config.navigational_formats = ['*/*', :html]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
-  config.sign_out_via = :get
+  config.sign_out_via = :delete
 
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting

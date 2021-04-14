@@ -34,15 +34,15 @@
           <%= link_to "チャット", "#", class: "nav-link" %>
         </li>
       </ul>
-      
-      　<ul class='nav-right'>
+       <ul class='nav-right'>
        <% if user_signed_in? %>
-     　　 <li><%= link_to current_user.name, root_path, class: "user-name" %></li>
-      　　<li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-      　<% end %>
+      <li><%= link_to current_user.name, root_path, class: "user-name" %></li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <% end %>
        </ul>
-  　　</div>
+     </div>
     </nav>
+ 
 
     <!-- image -->
     <img src="/assets/office.jpg" class="img-fluid" alt="トップ画像">
