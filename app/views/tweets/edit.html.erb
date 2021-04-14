@@ -1,0 +1,22 @@
+<div class="contents row">
+  <div class="container">
+    <h2>編集する</h2>
+    <%= form_with model: @tweet, local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+      
+        宿泊施設名<span class="indispensable">必須</span>
+      <%= f.text_field :hotel_name, placeholder: "ホテル/旅館など" %>
+        クチコミ<span class="indispensable">必須</span>
+      <%= f.text_area :content, placeholder: "宿泊した感想など", rows: "20" %>
+        写真<span class="indispensable">必須</span>
+       <%= f.file_field :image, id:"tweet-image", placeholder: "最高の1枚を！"  %>
+      
+      <!-- 変更ボタン-->
+      <div class="change-btn-contents">
+      <%= f.submit "更新する", class:"change-btn" %>
+      <%=link_to 'もどる', tweets_path, class:"back-btn" %>
+
+       </div>
+    </div>
+    <% end %>
+  </div>  

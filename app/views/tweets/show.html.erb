@@ -1,0 +1,13 @@
+     <% if current_user.id == @tweet.user_id %>  
+          <%= link_to '編集', edit_tweet_path(@tweet.id), method: :get %>
+          <%= link_to '削除', tweet_path(@tweet.id), method: :delete %>
+     <% end %>
+
+    <p><%= @tweet.hotel_name%></p>
+    <p><%= image_tag @tweet.image.variant(resize: '800x800') ,class: "tweet-img" %></p>
+     <span class="name">
+      <a href="/users/<%= @tweet.user.id %>">
+        <span>投稿者</span><%= @tweet.user.name %>
+      </a>
+    </span>
+    </span>

@@ -1,0 +1,11 @@
+<%= render "devise/shared/header"%>
+
+<div class="contents row">
+  <p><%= @name %>さんの投稿一覧</p>
+  <% @tweets.each do |tweet| %>
+    <%= image_tag tweet.image.variant(resize: '800x800') %>
+      <p><%= tweet.content %></p>
+      <span class="hotel_name"><%= tweet.hotel_name %></span>
+    </div>
+  <% end %>
+</div>
