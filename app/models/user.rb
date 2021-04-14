@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :authentication_keys => [:employee_id_number]
-        
+        has_many :tweets
         with_options presence: true do
         validates :employee_id_number, uniqueness: true, length: { maximum: 5 },
         format: { with: /\A\d{,5}\z/, message: ' 5桁以下で登録してください' }
@@ -14,9 +14,7 @@ class User < ApplicationRecord
       
         validates :name,
         format: { with: /\A[ぁ-んァ-ン一-龥]/, message: '全角で登録してください' } 
-        end
-      
-          
+    end
         def email_required?
           false
         end
