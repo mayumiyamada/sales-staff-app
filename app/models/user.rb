@@ -2,9 +2,9 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-        :recoverable, :rememberable, :validatable
-      
-        
+  :recoverable, :rememberable, :validatable
+
+  devise :authentication_keys => [:employee_id_number]  
         has_many :tweets
         with_options presence: true do
         validates :employee_id_number, uniqueness: true, length: { maximum: 5 },
