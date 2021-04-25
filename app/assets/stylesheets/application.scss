@@ -13,4 +13,9 @@
  *= require_tree .  
  */
 
+ * {
+  box-sizing: border-box;
+}
+
+@import "simple_calendar";
 
