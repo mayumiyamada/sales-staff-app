@@ -6,6 +6,11 @@ class User < ApplicationRecord
 
   devise :authentication_keys => [:employee_id_number]  
         has_many :tweets
+        has_many :room_users
+        has_many :rooms, through: :room_users
+        has_many :messages
+
+        
         with_options presence: true do
         validates :employee_id_number, uniqueness: true, length: { maximum: 5 },
         format: { with: /\A\d{,5}\z/, message: ' 5桁以下で登録してください' }
