@@ -1,0 +1,12 @@
+<div class= 'calender'>
+<a href="/">TOPに戻る</a>|
+ <%= link_to '予定を入力', new_calendar_path %>
+ <%= month_calendar events: @calendars do |date, calendars| %>
+ <%= date.day %>
+ <% calendars.each do |calender| %>
+  <div>
+ <%= link_to calender.title,calender %>
+  </div> 
+   <% end %>
+ <% end %>
+</div>
