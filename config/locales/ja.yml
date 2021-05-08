@@ -3,6 +3,7 @@ ja:
    attributes:
      user:
        name: 名前
+       employee_id_number: 社員番号
      tweet:
        content: クチコミ
        hotel_name: 宿泊施設 
