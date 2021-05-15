@@ -1,10 +1,5 @@
    <header class="header">
-    <div class="header__bar row">
-     <h4 class="grid-6"><a href="/"> TOPに戻る</a></h4>
-         <div class="user_nav grid-6">
-          <span><%=  "#{current_user.name}さん" %></span>
-         <%= link_to "マイページ", "/users/#{current_user.id}" %>
-         <%= link_to "投稿する", new_tweet_path, class: "post" %>
-        </div>
-      </div>
+     <h5><a href="/"> TOPに戻る</a></h5>
+         <%= link_to "マイページ", "/users/#{current_user.id}", class: "balloon1" %>
+         <%= link_to "投稿する", new_tweet_path, class: "balloon2" %>
     </header>

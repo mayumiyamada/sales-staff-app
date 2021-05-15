@@ -1,8 +1,8 @@
 class Calendar < ApplicationRecord
-  belongs_to :user
-
+ belongs_to :user
+  
   with_options presence: true do
-    validates :content
-    validates :hotel_name
-    validates :image
+      validates :title
+      validates :start_time
+  end
 end

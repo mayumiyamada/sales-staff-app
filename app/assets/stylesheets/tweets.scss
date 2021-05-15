@@ -1,21 +1,62 @@
-.header__bar.row  {
-  padding: 8px 20px;
-  font-size: 30px;
-  border: 2px solid #57C3E9;
-  color: #57C3E9;
-  font-weight: bold;
-  text-align: center;
-  border-radius: 3px;
-  display: inline-block;
-}
-
 .header {
   padding: 10px;
-  background-color: #fff;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 5;
-  height: 62px;
+ 
 }
+
+.balloon1 {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0;
+  padding: 0 5px;
+  width: 150px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: bold;
+  background: #a58eff;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.balloon1:before {
+  content: "";
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top: 15px solid #a58eff;
+  z-index: 0;
+}
+.balloon2 {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0;
+  padding: 0 5px;
+  width: 150px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: bold;
+  background: #70a6ff;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.balloon2:before {
+  content: "";
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top: 15px solid #70a6ff;
+  z-index: 0;
+}
+
+

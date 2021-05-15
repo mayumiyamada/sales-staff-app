@@ -9,7 +9,7 @@ class User < ApplicationRecord
    has_many :room_users
    has_many :rooms, through: :room_users
    has_many :messages
-   has_many :Calendars
+   has_many :calendars
 
   with_options presence: true do
    validates :employee_id_number, length: { maximum: 5 },

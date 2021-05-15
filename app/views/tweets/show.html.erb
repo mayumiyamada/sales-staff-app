@@ -1,5 +1,5 @@
      <% if current_user.id == @tweet.user_id %>  
-          <%= link_to '編集', edit_tweet_path(@tweet.id), method: :get %>
+          <%= link_to '編集', edit_tweet_path(@tweet.id), method: :get %>|
           <%= link_to '削除', tweet_path(@tweet.id), method: :delete %>
      <% end %>
 
@@ -10,4 +10,4 @@
      <span>投稿者</span><%= @tweet.user.name %>
       </a>
     </span>
-    </span>
+     </span>

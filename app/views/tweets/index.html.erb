@@ -7,8 +7,6 @@
      <p>コメント：<%= tweet.content %> </p>
 
 <%= link_to tweet_path(tweet.id) do %> 
-  <div class='item-img-content'>
 <%= image_tag tweet.image.variant(resize: '800x800') ,class: "tweet-img" if tweet.image.attached? %>
   <% end %>
  <% end %>
-</div>

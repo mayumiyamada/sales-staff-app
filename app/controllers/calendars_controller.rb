@@ -1,47 +1,45 @@
 class CalendarsController < ApplicationController
-  before_action :set_calendar, only: [:edit, :show, :destroy, :update]
+
   def index
-    @calendars = Calendar.all
+    @calendars = current_user.calendars
   end
 
   def new
-    @calendar = Calendar.new
+    @calendar = current_user.calendars.new
   end
 
-  def create
-    @calendar = Calendar.new(calendar_params)
-  if @calendar.save
-     redirect_to action: :index
-    else
-      render :new
-    end
+  def show
+    @calendar = current_user.calendars.find(params[:id])
   end
-
-  def show 
-  end 
 
   def edit
+    @calendar = current_user.calendars.find(params[:id])
   end
 
   def update
-  if @calendar.update(calendar_params)
-    redirect_to action: :index
-  else
-    render :edit
+    @calendar= current_user.calendars.find(params[:id])
+    @calendar.update(calendar_params)
+    redirect_to calendars_path
+  end
+
+  def create
+    @calendar = current_user.calendars.new(calendar_params)
+    if @calendar.save
+      redirect_to action: :index
+    else
+      redirect_to new_calendar_path
     end
   end
 
   def destroy
+    @calendar = current_user.calendars.find(params[:id])
     @calendar.destroy
-    redirect_to action: :index
+    redirect_to calendars_path
   end
+
 
   private
   def calendar_params
-    params.require(:calendar).permit(:title, :content, :start_time)
+    params.require(:calendar).permit(:start_time, :title, :content).merge(user_id: current_user.id)
   end
-
-  def set_calendar
-    @calendar = Calendar.find(params[:id])
-  end  
 end
