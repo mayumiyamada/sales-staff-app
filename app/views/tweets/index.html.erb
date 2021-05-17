@@ -1,5 +1,9 @@
-<%= render "devise/shared/header"%>
-
+<header class="header">
+  <h4><a href="/"> TOPに戻る</a></h4>
+  <%= link_to "マイページ", "/users/#{current_user.id}", class: "balloon1" %>
+  <%= link_to "投稿する", new_tweet_path, class: "balloon2" %>
+</header>
+<h1 class="tweets-title">くちコミ情報</h1>
 <% @tweets.each do |tweet| %>
     <a href="/users/<%= tweet.user.id %>">
      <p>投稿者：<%= tweet.user.name %></p></a>
