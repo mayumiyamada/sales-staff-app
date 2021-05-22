@@ -5,11 +5,14 @@
     <%= form_with model: @tweet, local: true do |f| %>
     <%= render 'devise/shared/error_messages', model: f.object %>
        
-         宿泊施設名<span class="indispensable">必須</span>
+      　<span class="indispensable">必須</span>
+      <%= f.label :宿泊施設名%>
       <%= f.text_field :hotel_name, placeholder: "ホテル/旅館など" %>
-        クチコミ<span class="indispensable">必須</span>
+      　<span class="indispensable">必須</span>
+      <%= f.label :口コミ%>
       <%= f.text_area :content, placeholder: "宿泊した感想など", rows: "20" %>
-        写真<span class="indispensable">必須</span>
+      　<span class="indispensable">必須</span>
+       <%= f.label :写真 %>
        <%= f.file_field :image, id:"tweet-image" %>
       <%= f.submit "SEND" %>
       <%=link_to 'もどる', tweets_path, class:"back-btn" %>

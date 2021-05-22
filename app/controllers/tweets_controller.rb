@@ -20,20 +20,21 @@ class TweetsController < ApplicationController
     end
   end
 
-  def destroy
-    @tweet.destroy
-    redirect_to action: :index
-  end
 
   def edit
   end
 
   def update
-    @tweet.update(tweet_params)
+    tweet.update(tweet_params)
     redirect_to action: :index
   end
 
   def show
+  end
+
+  def destroy
+    tweet.destroy
+    redirect_to action: :index
   end
 
 

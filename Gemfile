@@ -63,10 +63,13 @@ gem 'font-awesome-rails'
 
 gem 'pry-rails'
 
-gem 'mini_magick'
-gem 'image_processing', '~> 1.2'
-
 gem 'rails-i18n'
 
 gem "simple_calendar", "~> 2.4"
+
+gem 'faker'
+
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
+
 

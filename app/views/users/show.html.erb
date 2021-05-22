@@ -1,6 +1,7 @@
 <%= render "devise/shared/header"%>
 
-<div class="contents row">
+<div class="contents-row">
+<%= link_to "口コミに戻る", tweets_path %>
   <p><%= @name %>さんの投稿一覧</p>
   <% @tweets.each do |tweet| %>
     <%= image_tag tweet.image.variant(resize: '800x800') %>
