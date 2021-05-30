@@ -47,7 +47,7 @@ class TweetsController < ApplicationController
   end
 
   def move_to_index
-    redirect_to action: :index if current_user.id = @tweet.user_id 
+    redirect_to action: :index if current_user.id != @tweet.user_id 
   end
   
 end

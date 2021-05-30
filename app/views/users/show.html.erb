@@ -1,10 +1,10 @@
 <%= render "devise/shared/header"%>
 
 <div class="contents-row">
-<h5><a href="/"> 口コミに戻る</a></h5>
+<%=link_to '口コミに戻る', tweets_path, class:"back-btn" %>
   <p><%= @name %>さんの投稿一覧</p>
   <% @tweets.each do |tweet| %>
-    <%= image_tag tweet.image.variant(resize: '800x800') %>
+    <%= image_tag tweet.image.variant(resize: '900x900') %>
        <p>宿泊施設：<%= tweet.hotel_name %></p>
        <p>コメント：<%= tweet.content %></p>
   <% end %>
